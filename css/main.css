@@ -39,8 +39,11 @@
 
 .site-body__span{
   display: block;
+  margin:0 500px;
   text-align: center;
   margin-bottom: 20px;
+  color: #fff;
+  background-color: red; 
 }
 
 .site-body__list{

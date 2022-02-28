@@ -28,13 +28,16 @@ elForm.addEventListener("submit", function(event){
     
       return;
     }else{
+      
       elSpan.classList.add("result-success");
       elSpan.classList.remove("result-error");
     }
   
     
-  
+  /*
   function result1(){
+    var hour = Math.floor(elInputVal / speed1);
+    var minute = Math.floor((elInputVal / speed2))
     return(elInputVal / speed1);
   }
     
@@ -49,7 +52,30 @@ elForm.addEventListener("submit", function(event){
   function result4(){
     return(elInputVal / speed4);
   }
+*/
 
+  
+  function result1(distance, speed) {
+    var hour = Math.floor(elInputVal / speed1);
+    var minute = Math.floor((elInputVal / speed1 - hour) * 60);
+    return hour + ' soat ' + minute + ' minut ';
+    }
+  function result2(distance, speed) {
+    var hour = Math.floor(elInputVal / speed2);
+    var minute = Math.floor((elInputVal / speed2 - hour) * 60);
+    return hour + ' soat ' + minute + ' minut ';
+  }
+  function result3(distance, speed) {
+    var hour = Math.floor(elInputVal / speed3);
+    var minute = Math.floor((elInputVal / speed3 - hour) * 60);
+    return hour + ' soat ' + minute + ' minut ';
+  }
+  function result4(distance, speed) {
+    var hour = Math.floor(elInputVal / speed4);
+    var minute = Math.floor((elInputVal / speed4 - hour) * 60);
+    return hour + ' soat ' + minute + ' minut ';
+  }
+      
   
 
   elSpan1.textContent = (result1());
