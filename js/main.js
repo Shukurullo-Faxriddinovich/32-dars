@@ -2,10 +2,12 @@
 
 var elForm = document.querySelector(".form");
 var elInput = document.querySelector(".form__input");
-var elSpan1 = document.querySelector(".site-body__span-m")
-var elSpan2 = document.querySelector(".site-body__span-b")
-var elSpan3 = document.querySelector(".site-body__span-c")
-var elSpan4 = document.querySelector(".site-body__span-a")
+var elSpan = document.querySelector(".site-body__span");
+var elSpan1 = document.querySelector(".site-body__span-m");
+var elSpan2 = document.querySelector(".site-body__span-b");
+var elSpan3 = document.querySelector(".site-body__span-c");
+var elSpan4 = document.querySelector(".site-body__span-a");
+
 
 
 elForm.addEventListener("submit", function(event){
@@ -16,8 +18,22 @@ elForm.addEventListener("submit", function(event){
     var speed2 = 20.1;
     var speed3 = 70;
     var speed4 = 800;
-  
+    
+    if (elInputVal <= 0 || isNaN(elInputVal)){
 
+      elSpan.textContent = ("Iltimos 0 dan katta son kiriting ! , yokida son kiriting !");
+    
+      elSpan.classList.add("result-error");
+      elSpan.classList.remove("result-success");
+    
+      return;
+    }else{
+      elSpan.classList.add("result-success");
+      elSpan.classList.remove("result-error");
+    }
+  
+    
+  
   function result1(){
     return(elInputVal / speed1);
   }
@@ -34,14 +50,11 @@ elForm.addEventListener("submit", function(event){
     return(elInputVal / speed4);
   }
 
-
-  elSpan1.textContent = Math.round(result1());
-  elSpan2.textContent = Math.round(result2());
-  elSpan3.textContent = Math.round(result3());
-  elSpan4.textContent = Math.round(result4());
-
   
+
+  elSpan1.textContent = (result1());
+  elSpan2.textContent = (result2());
+  elSpan3.textContent = (result3());
+  elSpan4.textContent = (result4());
+
 });
-
-
-
